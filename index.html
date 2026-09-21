@@ -282,6 +282,7 @@
   </div>
 </footer>
 
+<script src="assets/js/stack-icons.js"></script>
 <script>
 (function(){
   // Mobile drawer
@@ -310,24 +311,34 @@
   // Stack in orbit: three rings of monospaced chips, drawn in the TUI's own palette.
   var orbit = document.getElementById('orbit');
   var host = document.getElementById('orbit-host');
+  var icons = window.STACK_ICONS || {};
   var rings = [
-    { radius: 90,  dur: 36, reverse: false, tools: ['spring', 'angular', 'next.js', 'postgres'] },
-    { radius: 150, dur: 54, reverse: true,  tools: ['aws', 'docker', 'digitalocean', 'maven', 'jenkins', 'java'] },
-    { radius: 210, dur: 78, reverse: false, tools: ['kafka', 'redis', 'react', 'git', 'github', 'gitlab', 'sonarqube', 'aem'] }
+    { radius: 90,  dur: 36, reverse: false, tools: [
+      ['springboot', '#6DB33F'], ['angular', '#DD0031'], ['nextdotjs'], ['postgresql', '#4169E1'] ] },
+    { radius: 150, dur: 54, reverse: true,  tools: [
+      ['amazonwebservices', '#FF9900'], ['docker', '#2496ED'], ['digitalocean', '#0080FF'], ['apachemaven', '#C71A36'], ['jenkins', '#D24939'], ['java', '#F89820'] ] },
+    { radius: 210, dur: 78, reverse: false, tools: [
+      ['apachekafka'], ['redis', '#FF4438'], ['react', '#61DAFB'], ['git', '#F05032'], ['github'], ['gitlab', '#FC6D26'], ['sonarqube', '#4E9BCD'], ['aem', '#FF7618'] ] }
   ];
   if(orbit && host){
     rings.forEach(function(r){
       var ring = document.createElement('div');
       ring.className = 'ring' + (r.reverse ? ' ring--rev' : '');
       ring.style.setProperty('--dur', r.dur + 's');
-      r.tools.forEach(function(name, i){
+      r.tools.forEach(function(t, i){
         var moon = document.createElement('div');
         moon.className = 'moon';
         moon.dataset.angle = (360 / r.tools.length) * i;
         moon.dataset.radius = r.radius;
         var chip = document.createElement('span');
         chip.className = 'moon__chip';
-        chip.textContent = name;
+        if(t[1]) chip.style.color = t[1];
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('viewBox', '0 0 24 24');
+        svg.setAttribute('fill', 'currentColor');
+        svg.setAttribute('aria-hidden', 'true');
+        svg.innerHTML = icons[t[0]] || '';
+        chip.appendChild(svg);
         moon.appendChild(chip);
         ring.appendChild(moon);
       });

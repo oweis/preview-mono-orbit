@@ -143,14 +143,16 @@ strong,b{font-weight:500}
 .ring--rev{animation-direction:reverse}
 @keyframes orbit-spin{to{transform:rotate(360deg)}}
 .moon{position:absolute;top:50%;left:50%;width:0;height:0}
+/* avatar-style circles are the only fully rounded element in the system */
 .moon__chip{
   position:absolute;left:0;top:0;
   transform:translate(-50%,-50%);
-  background:var(--surface-card);color:var(--ink);
-  border:1px solid var(--hair);border-radius:var(--r);
-  padding:0 8px;font-size:12px;line-height:1.8;white-space:nowrap;
+  width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+  background:var(--canvas);color:var(--ink);
+  border:1px solid var(--hair);border-radius:9999px;
   animation:orbit-counter var(--dur) linear infinite;
 }
+.moon__chip svg{width:20px;height:20px}
 .ring--rev .moon__chip{animation-name:orbit-counter-rev}
 @keyframes orbit-counter{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(-360deg)}}
 @keyframes orbit-counter-rev{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
@@ -161,7 +163,8 @@ strong,b{font-weight:500}
   .hero__orbit{justify-self:end;width:min(100%,520px)}
 }
 @media (max-width:640px){
-  .moon__chip{font-size:10px;padding:0 5px;line-height:1.7}
+  .moon__chip{width:32px;height:32px}
+  .moon__chip svg{width:16px;height:16px}
   .orbit__sun{width:40px;height:40px}
 }
 

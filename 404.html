@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="robots" content="noindex"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<meta name="theme-color" content="#fdfcfc"/>
+<link rel="icon" type="image/svg+xml" href="/assets/logo/nested-o.svg?v=2"/>
+<link rel="apple-touch-icon" href="/assets/logo/apple-touch-icon.png"/>
+<title>404 — Oweis Yahya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{--canvas:#fdfcfc;--ink:#201d1d;--ink-deep:#0f0000;--body:#424245;--mute:#646262;--hair:rgba(15,0,0,.12);--hair-strong:#646262;--dark:#201d1d;--on-dark:#fdfcfc;--on-dark-mute:#9a9898;--r:4px;color-scheme:light}
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;background:var(--canvas);color:var(--ink);font-family:"IBM Plex Mono","Berkeley Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:16px;line-height:1.5}
+  body{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .wrap{max-width:640px;width:100%}
+  .tui{background:var(--dark);color:var(--on-dark);padding:32px;margin-bottom:24px}
+  .tui pre{margin:0;font-family:inherit;font-size:15px;line-height:1.7;white-space:pre-wrap;word-break:break-all}
+  .tui .k{color:var(--on-dark-mute)}.tui .c{color:#5ea6ff}.tui .e{color:#ff3b30}
+  h1{font-size:38px;font-weight:700;line-height:1.5;margin:0 0 8px}
+  p{margin:0 0 24px;color:var(--body);max-width:56ch}
+  .row{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;padding:4px 20px;line-height:2;font-weight:500;border-radius:var(--r);border:1px solid var(--ink);background:var(--ink);color:var(--canvas);text-decoration:none}
+  .btn:active{background:var(--ink-deep)}
+  .btn--secondary{background:var(--canvas);color:var(--ink);border-color:var(--hair-strong)}
+  .btn--secondary:hover{border-color:var(--ink)}
+  a:focus-visible{outline:1px solid var(--ink);outline-offset:2px}
+  @media (max-width:640px){h1{font-size:26px;line-height:1.4}.tui{padding:20px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="tui" aria-hidden="true">
+<pre><span class="k">$</span> <span class="c">oweis</span> open <span id="path">~/</span>
+<span class="e">[x]</span> 404: no such page
+<span class="k">[-]</span> it may have moved, or the link was never right</pre>
+  </div>
+  <h1>Page not found.</h1>
+  <p>Nothing lives at this address. Head back to the start, or send me a note and I'll point you the right way.</p>
+  <div class="row">
+    <a class="btn" href="/">Back to home</a>
+    <a class="btn btn--secondary" href="/#contact">Email me instead</a>
+  </div>
+</main>
+<script>document.getElementById('path').textContent='~' + (location.pathname || '/');</script>
+</body></html>

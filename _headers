@@ -1,0 +1,34 @@
+# NOTE: GitHub Pages does not read this file — it is a Cloudflare Pages / Netlify
+# convention. While the site is served from GitHub Pages none of the rules below
+# are applied (verify with `curl -sI https://oweis.me/`). It is kept so the headers
+# come into effect on the first deploy to a host that honours it.
+#
+# What GitHub Pages can and cannot do today:
+#   Referrer-Policy        → set via <meta name="referrer"> in index.html / 404.html
+#   X-Content-Type-Options → not settable without header control
+#   Permissions-Policy     → not settable without header control
+#   X-Frame-Options        → not settable without header control; <meta> cannot carry
+#                            it, and CSP frame-ancestors is ignored in <meta>, so real
+#                            clickjacking protection requires moving hosts.
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Content-addressed by filename — safe to freeze.
+/assets/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/logo/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# style.css keeps a stable name, so it must never be immutable — a year-long
+# freeze would strand returning visitors on an old stylesheet after every deploy.
+/assets/css/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/assets/Oweis_Yahya_CV.pdf
+  Content-Disposition: attachment; filename="Oweis_Yahya_CV.pdf"
+  Cache-Control: public, max-age=86400

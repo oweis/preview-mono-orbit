@@ -112,35 +112,53 @@
 <main id="main-content" tabindex="-1">
 
   <!-- Hero -->
-  <section class="frame hero" id="about">
-    <div class="hero__text">
-      <span class="hero__badge">Available for one more project</span>
-      <h1 class="display">I build the product. You bring the vision.</h1>
-      <p class="body">Senior Software Engineer. I architect and ship products end-to-end: domain model, APIs, infrastructure, and the pipeline that keeps them honest.</p>
-      <div class="hero__actions">
-        <a class="btn" href="#contact">Start a project</a>
-        <a class="btn btn--secondary" href="#work">See recent work</a>
+  <section class="frame hero hero--orbit" id="about">
+    <div class="hero__grid">
+      <div class="hero__text">
+        <span class="hero__badge">Available for one more project</span>
+        <h1 class="display">I build the product. You bring the vision.</h1>
+        <p class="body">Senior Software Engineer. I architect and ship products end-to-end: domain model, APIs, infrastructure, and the pipeline that keeps them honest.</p>
+        <div class="hero__actions">
+          <a class="btn" href="#contact">Start a project</a>
+          <a class="btn btn--secondary" href="#work">See recent work</a>
+        </div>
       </div>
+
+      <figure class="hero__orbit" role="img" aria-label="Oweis Yahya's stack drawn as a solar system: Spring Boot, Angular, Next.js and PostgreSQL on the inner ring; AWS, Docker, DigitalOcean, Maven, Jenkins and Java on the middle ring; Kafka, Redis, React, Git, GitHub, GitLab, SonarQube and AEM on the outer ring.">
+        <div class="orbit" id="orbit" aria-hidden="true">
+          <svg class="orbit__rings" viewBox="0 0 520 520" aria-hidden="true">
+            <circle cx="260" cy="260" r="90"  fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1 5" opacity=".7"/>
+            <circle cx="260" cy="260" r="150" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1 5" opacity=".6"/>
+            <circle cx="260" cy="260" r="210" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1 5" opacity=".5"/>
+          </svg>
+          <div class="orbit__sun">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="46" fill="currentColor" opacity=".08"/>
+              <circle cx="50" cy="50" r="24" fill="none" stroke="currentColor" stroke-width="6"/>
+            </svg>
+          </div>
+          <div class="orbit__host" id="orbit-host"></div>
+        </div>
+        <figcaption class="orbit__caption" aria-hidden="true">fig 1. the stack, in orbit</figcaption>
+      </figure>
     </div>
 
-    <!-- The system's only dark surface: a terminal running the stack in orbit. -->
-    <div class="tui tui--orbit" role="img" aria-label="Terminal view of Oweis Yahya's stack drawn as a solar system: Spring Boot, Angular, Next.js and PostgreSQL on the inner ring; AWS, Docker, DigitalOcean, Maven, Jenkins and Java on the middle ring; Kafka, Redis, React, Git, GitHub, GitLab, SonarQube and AEM on the outer ring.">
-<pre class="tui__lines tui__lines--head" aria-hidden="true"><span class="k">$</span> <span class="c">oweis</span> --stack --orbit   <span class="k">since 2017 · <span id="java-yrs">9</span>+ yrs · </span><span class="ok">[x]</span><span class="k"> Paliero shipped</span></pre>
-      <div class="orbit" id="orbit" aria-hidden="true">
-        <svg class="orbit__rings" viewBox="0 0 520 520" aria-hidden="true">
-          <circle cx="260" cy="260" r="90"  fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1 5" opacity=".55"/>
-          <circle cx="260" cy="260" r="150" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1 5" opacity=".45"/>
-          <circle cx="260" cy="260" r="210" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1 5" opacity=".35"/>
-        </svg>
-        <div class="orbit__sun">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <circle cx="50" cy="50" r="46" fill="currentColor" opacity=".1"/>
-            <circle cx="50" cy="50" r="24" fill="none" stroke="currentColor" stroke-width="6"/>
-          </svg>
-        </div>
-        <div class="orbit__host" id="orbit-host"></div>
-      </div>
-      <p class="tui__caption" aria-hidden="true">fig 1. the stack, in orbit — 18 tools on 3 rings, ordered by how often they ship.</p>
+    <!-- The system's only dark surface: a terminal that prints the facts. -->
+    <div class="tui" role="img" aria-label="Terminal output summarising Oweis Yahya: Senior Software Engineer since 2017, Java, Spring Boot and cloud architecture, shipped Paliero, certified OCA Java SE 8 and PSD I, open for one more project.">
+<pre class="tui__mark" aria-hidden="true">█████   █   █   █████   █████   █████
+█   █   █   █   █         █     █
+█   █   █ █ █   ████      █     █████
+█   █   ██ ██   █         █         █
+█████   █   █   █████   █████   █████</pre>
+<pre class="tui__lines" aria-hidden="true"><span class="k">$</span> <span class="c">oweis</span> --status
+
+  name      Oweis Yahya
+  role      Senior Software Engineer
+  focus     Java · Spring Boot · cloud architecture
+  since     2017  <span class="k">(<span id="java-yrs">9</span>+ yrs)</span>
+  shipped   <span class="ok">[x]</span> Paliero  <span class="k">→</span> paliero.com
+  certs     <span class="ok">[x]</span> OCA Java SE 8   <span class="ok">[x]</span> PSD I
+  status    <span class="w">[+]</span> open for one more project</pre>
       <div class="tui__prompt" aria-hidden="true">
         <span class="pipe">│</span>
         <span>Build</span>

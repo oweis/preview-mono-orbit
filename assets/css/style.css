@@ -168,12 +168,12 @@ strong,b{font-weight:500}
   .tui__lines{font-size:13px}
 }
 
-/* ── stack in orbit (lives inside the dark TUI surface only) ── */
-.tui--orbit{padding-bottom:48px}
-.tui__lines--head{margin-bottom:8px;white-space:pre-wrap;overflow:visible}
-.orbit{position:relative;aspect-ratio:1;width:min(100%,520px);margin:8px auto 0;overflow:hidden;color:var(--on-dark-mute)}
+/* ── stack in orbit: beside the hero text, on the cream canvas ── */
+.hero__grid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;align-items:center}
+.hero__orbit{margin:0;justify-self:center;width:min(100%,400px)}
+.orbit{position:relative;aspect-ratio:1;width:100%;overflow:hidden;color:var(--hair-strong)}
 .orbit__rings{position:absolute;inset:0;width:100%;height:100%}
-.orbit__sun{position:absolute;top:50%;left:50%;width:56px;height:56px;transform:translate(-50%,-50%);color:var(--on-dark);z-index:2}
+.orbit__sun{position:absolute;top:50%;left:50%;width:56px;height:56px;transform:translate(-50%,-50%);color:var(--ink);z-index:2}
 .orbit__host{position:absolute;inset:0}
 .ring{position:absolute;inset:0;animation:orbit-spin var(--dur) linear infinite}
 .ring--rev{animation-direction:reverse}
@@ -182,8 +182,8 @@ strong,b{font-weight:500}
 .moon__chip{
   position:absolute;left:0;top:0;
   transform:translate(-50%,-50%);
-  background:var(--surface-dark-2);color:var(--on-dark);
-  border:1px solid rgba(253,252,252,.22);border-radius:var(--r);
+  background:var(--surface-card);color:var(--ink);
+  border:1px solid var(--hair);border-radius:var(--r);
   padding:0 8px;font-size:12px;line-height:1.8;white-space:nowrap;
   animation:orbit-counter var(--dur) linear infinite;
 }
@@ -191,11 +191,14 @@ strong,b{font-weight:500}
 @keyframes orbit-counter{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(-360deg)}}
 @keyframes orbit-counter-rev{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
 .orbit.is-paused .ring,.orbit.is-paused .moon__chip{animation-play-state:paused}
-.tui__caption{margin:16px 0 0;font-size:14px;line-height:2;color:var(--on-dark-mute)}
+.orbit__caption{margin:4px 0 0;font-size:14px;line-height:2;color:var(--mute);text-align:center}
+@media (min-width:1024px){
+  .hero__grid{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px}
+  .hero__orbit{justify-self:end;width:min(100%,520px)}
+}
 @media (max-width:640px){
   .moon__chip{font-size:10px;padding:0 5px;line-height:1.7}
   .orbit__sun{width:40px;height:40px}
-  .tui--orbit{padding-bottom:32px}
 }
 
 /* ── list rows (DESIGN.md list-row / faq-row) ──────────────── */

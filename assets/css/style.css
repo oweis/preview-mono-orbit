@@ -170,7 +170,7 @@ strong,b{font-weight:500}
 
 /* ── stack in orbit (lives inside the dark TUI surface only) ── */
 .tui--orbit{padding-bottom:48px}
-.tui__lines--head{margin-bottom:8px}
+.tui__lines--head{margin-bottom:8px;white-space:pre-wrap;overflow:visible}
 .orbit{position:relative;aspect-ratio:1;width:min(100%,520px);margin:8px auto 0;overflow:hidden;color:var(--on-dark-mute)}
 .orbit__rings{position:absolute;inset:0;width:100%;height:100%}
 .orbit__sun{position:absolute;top:50%;left:50%;width:56px;height:56px;transform:translate(-50%,-50%);color:var(--on-dark);z-index:2}
@@ -193,8 +193,8 @@ strong,b{font-weight:500}
 .orbit.is-paused .ring,.orbit.is-paused .moon__chip{animation-play-state:paused}
 .tui__caption{margin:16px 0 0;font-size:14px;line-height:2;color:var(--on-dark-mute)}
 @media (max-width:640px){
-  .moon__chip{font-size:11px;padding:0 6px}
-  .orbit__sun{width:44px;height:44px}
+  .moon__chip{font-size:10px;padding:0 5px;line-height:1.7}
+  .orbit__sun{width:40px;height:40px}
   .tui--orbit{padding-bottom:32px}
 }
 
